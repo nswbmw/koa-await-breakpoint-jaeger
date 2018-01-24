@@ -1,6 +1,6 @@
 const path = require('path')
 const JaegerStore = require('..')
-const koaYieldBreakpoint = require('koa-await-breakpoint')({
+const koaAwaitBreakpoint = require('koa-await-breakpoint')({
   name: 'api',
   files: [path.join(__dirname, '**/*.js')],
   store: new JaegerStore()
@@ -11,7 +11,7 @@ const Router = require('koa-router')
 const app = new Koa()
 const router = new Router()
 
-app.use(koaYieldBreakpoint)
+app.use(koaAwaitBreakpoint)
 
 router.post('/users', require('./routes/users').createUser)
 
