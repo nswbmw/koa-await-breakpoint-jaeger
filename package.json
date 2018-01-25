@@ -1,6 +1,6 @@
 {
   "name": "koa-await-breakpoint-jaeger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jaeger for koa-await-breakpoint.",
   "main": "index.js",
   "scripts": {

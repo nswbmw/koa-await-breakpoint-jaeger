@@ -32,11 +32,13 @@ class JaegerStore {
       if (parentSpan) {
         span = ctx._tracer.startSpan(record.fn, {
           childOf: parentSpan,
+          startTime: record.timestamp.getTime(),
           tags
         })
       } else {
         span = ctx._tracer.startSpan(record.fn, {
           childOf: getLastSpan(),
+          startTime: record.timestamp.getTime(),
           tags
         })
       }
